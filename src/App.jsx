@@ -3,6 +3,10 @@ import { Form } from './components/Form/Form'
 import { ToDoItem } from './components/ToDoItem/ToDoItem'
 
 function App() {
+  const todos = [
+    { name: 'Zapłacić rachunki', done: false },
+    { name: 'Wyrzycić śmieci', done: true },
+  ]
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -14,8 +18,9 @@ function App() {
       </header>
       <Form />
       <ul>
-        <ToDoItem name="Zapłacić rachunki" done={false} />
-        <ToDoItem name="Wyrzycić śmieci" done={true} />
+        {todos.map((todo) => (
+          <ToDoItem name={todo.name} done={todo.done} />
+        ))}
       </ul>
     </div>
   )
