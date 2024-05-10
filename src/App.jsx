@@ -1,6 +1,6 @@
 import styles from './App.module.css'
-import { Button } from './components/Button/Button'
 import { Form } from './components/Form/Form'
+import { ToDoItem } from './components/ToDoItem/ToDoItem'
 
 function App() {
   return (
@@ -13,6 +13,10 @@ function App() {
         <button className={styles.button}>+</button>
       </header>
       <Form />
+      <ul>
+        <ToDoItem name="Zapłacić rachunki" done={false} />
+        <ToDoItem name="Wyrzycić śmieci" done={true} />
+      </ul>
     </div>
   )
 }
