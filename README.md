@@ -1,1 +1,6 @@
-# todo-react-app
+# TODO App
+
+Tech stack:
+
+- React
+- Vite
