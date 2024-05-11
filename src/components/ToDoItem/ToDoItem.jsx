@@ -1,11 +1,12 @@
+import { Button } from '../Button/Button'
 import styles from './ToDoItem.module.css'
 
 export function ToDoItem({ name, done }) {
   return (
     <li>
       <span>{name}</span>
-      {!done && <button>Zrobione</button>}
-      <button>Usuń</button>
+      {!done && <Button>Zrobione</Button>}
+      <Button>Usuń</Button>
     </li>
   )
 }
