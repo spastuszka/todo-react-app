@@ -1,6 +1,7 @@
 import styles from './App.module.css'
 import { Form } from './components/Form/Form'
 import { ToDoItem } from './components/ToDoItem/ToDoItem'
+import { getSubHeading } from './utils/getSubHeading'
 
 function App() {
   const todos = [
@@ -12,7 +13,7 @@ function App() {
       <header className={styles.header}>
         <div>
           <h1>Do zrobienia</h1>
-          <h2>5 zadań</h2>
+          <h2>{getSubHeading(todos.length)}</h2>
         </div>
         <button className={styles.button}>+</button>
       </header>
