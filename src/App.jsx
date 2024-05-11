@@ -42,7 +42,12 @@ function App() {
       )}
       <ul>
         {todos.map(({ id, name, done }) => (
-          <ToDoItem key={id} name={name} done={done} />
+          <ToDoItem
+            key={id}
+            name={name}
+            done={done}
+            onDeleteButtonClick={() => alert('Usuwanie')}
+          />
         ))}
       </ul>
     </div>
