@@ -4,8 +4,8 @@ import { ToDoItem } from './components/ToDoItem/ToDoItem'
 
 function App() {
   const todos = [
-    { name: 'Zapłacić rachunki', done: false },
-    { name: 'Wyrzycić śmieci', done: true },
+    { name: 'Zapłacić rachunki', done: false, id: 1 },
+    { name: 'Wyrzycić śmieci', done: true, id: 2 },
   ]
   return (
     <div className={styles.container}>
@@ -18,8 +18,8 @@ function App() {
       </header>
       <Form />
       <ul>
-        {todos.map((todo) => (
-          <ToDoItem name={todo.name} done={todo.done} />
+        {todos.map(({ id, name, done }) => (
+          <ToDoItem key={id} name={name} done={done} />
         ))}
       </ul>
     </div>
