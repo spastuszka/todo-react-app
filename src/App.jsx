@@ -7,10 +7,10 @@ import { getSubHeading } from './utils/getSubHeading'
 function App() {
   const [isFormShown, setIsFormShown] = new useState(false)
 
-  const todos = [
+  const [todos, setTodos] = useState([
     { name: 'Zapłacić rachunki', done: false, id: 1 },
     { name: 'Wyrzycić śmieci', done: true, id: 2 },
-  ]
+  ])
 
   return (
     <div className={styles.container}>
