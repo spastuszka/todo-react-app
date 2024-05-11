@@ -46,7 +46,11 @@ function App() {
             key={id}
             name={name}
             done={done}
-            onDeleteButtonClick={() => alert('Usuwanie')}
+            onDeleteButtonClick={() => {
+              setTodos((prevTodos) =>
+                prevTodos.filter((todo) => todo.id !== id)
+              )
+            }}
           />
         ))}
       </ul>
