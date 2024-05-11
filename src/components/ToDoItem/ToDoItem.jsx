@@ -3,8 +3,8 @@ import styles from './ToDoItem.module.css'
 
 export function ToDoItem({ name, done }) {
   return (
-    <li>
-      <span>{name}</span>
+    <li className={styles.item}>
+      <span className={styles.name}>{name}</span>
       {!done && <Button>Zrobione</Button>}
       <Button>Usuń</Button>
     </li>
