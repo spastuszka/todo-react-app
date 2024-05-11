@@ -28,7 +28,9 @@ function App() {
           </button>
         )}
       </header>
-      {isFormShown && <Form onFormSubmit={() => alert('Submit!')} />}
+      {isFormShown && (
+        <Form onFormSubmit={(newToDoName) => alert(newToDoName)} />
+      )}
       <ul>
         {todos.map(({ id, name, done }) => (
           <ToDoItem key={id} name={name} done={done} />
