@@ -29,7 +29,16 @@ function App() {
         )}
       </header>
       {isFormShown && (
-        <Form onFormSubmit={(newToDoName) => alert(newToDoName)} />
+        // prevTodos - funkcja aktualizująca, biorąca stary stan tablicy
+        <Form
+          onFormSubmit={(newToDoName) => {
+            setTodos((prevTodos) => [
+              ...prevTodos,
+              { name: newToDoName, done: false, id: prevTodos.length + 1 },
+            ])
+            setIsFormShown(false)
+          }}
+        />
       )}
       <ul>
         {todos.map(({ id, name, done }) => (
