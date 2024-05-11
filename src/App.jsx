@@ -2,6 +2,19 @@ import styles from './App.module.css'
 import { Form } from './components/Form/Form'
 import { ToDoItem } from './components/ToDoItem/ToDoItem'
 
+function getSubHeading(numberOfTasks) {
+  switch (true) {
+    case numberOfTasks > 4:
+      return `${numberOfTasks} zadań`
+    case numberOfTasks > 1:
+      return `${numberOfTasks} zadania`
+    case numberOfTasks === 1:
+      return `1 zadanie`
+    default:
+      return 'Brak zadań'
+  }
+}
+
 function App() {
   const todos = [
     { name: 'Zapłacić rachunki', done: false, id: 1 },
